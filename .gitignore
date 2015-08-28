@@ -1,0 +1,12 @@
+# idea
+*.iml
+*.ipr
+*.iws
+/.idea/**
+
+grails-webflow-*.zip
+plugin.xml
+target
+unzipped
+.settings/
+*.log
