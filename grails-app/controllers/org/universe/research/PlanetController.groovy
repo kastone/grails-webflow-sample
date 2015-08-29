@@ -37,7 +37,7 @@ class PlanetController {
 
 }
 
-//NOTE: This doesn't need @Validateable as Grails' docs indicate b/c in same source file.
+//NOTE: This doesn't need @Validateable as Grails' docs indicate b/c in same source file as Controller.
 class PlanetCommand {
     String color
     PlanetSize planetSize

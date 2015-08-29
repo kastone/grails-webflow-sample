@@ -39,9 +39,15 @@ class PlanetFlowController {
     }
 }
 /*
+UPDATE: This is not recognized by grails-core as a command object as is it not used as argument to controller action, but just as argument to webflow closure.
+The plugin docs suggest it is used as command object. Submit issue to plugin github for clarification.
+
+Jeff Brown suggested that the validateable behavior is added by plugin at runtime and suggested a feature request to have that behavior
+added at compile time.
+
 @Validateable annotation should not be required here according to Grails docs but it seems necessary for Webflow controllers.
-If the command object is defined in the same source file as the controller that is using it, Grails will automatically mark it as Validateable. It is not required that command object classes be validateable.
  */
+
 @Validateable
 class WebflowPlanetCommand implements Serializable{
     //BindUsing not triggered either

@@ -10,6 +10,8 @@ import spock.lang.Specification
 This follows suggested way of testing command objects from grails docs.
 http://grails.github.io/grails-doc/2.4.3/guide/testing.html#unitTestingControllers Testing Command Objects
 However if the command object is used in a WebFlow, it appears you have to annotate it with @Validateable for unit tests to pass.
+
+UPDATE: WebflowPlanetNoValidateableCommand not recognized by grails-core as command object.
  */
 @TestFor(PlanetFlowNoValidateableController)
 class PlanetWebflowNoValidateableControllerUsesTestForSpec extends Specification {
