@@ -3,6 +3,7 @@ grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
+grails.project.plugins.dir = "plugins"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
@@ -19,6 +20,9 @@ grails.project.dependency.resolution = {
     log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
+
+    def seleniumVersion = "2.45.0"
+    def gebVersion = "0.12.2"
 
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
@@ -39,6 +43,11 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+        test("org.seleniumhq.selenium:selenium-htmlunit-driver:$seleniumVersion") {
+            exclude "commons-logging"
+        }
+        test "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+        test "org.gebish:geb-junit4:$gebVersion"
     }
 
     plugins {
@@ -56,6 +65,8 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.11.1"
 
         compile ":webflow:2.1.0"
+
+        test ":geb:$gebVersion"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"

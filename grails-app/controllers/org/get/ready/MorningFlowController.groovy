@@ -69,7 +69,7 @@ class MorningFlowController {
             on('increment') {
                 //If Running Grails 2.4.5 the execution param is not appended to the wakeUp/hitAlarmClock.gsp increment link.
                 //This causes the flow to start over(hits init method)
-                //If Running Grails 2.4.3 the execution param IS appended and the flow correctly re-renders the hitAlarmClock.gsp with incremented counter.
+                //If Running Grails 2.4.3 the execution param IS appended and the flow correctly calls the wakeUpFlow and re-renders the hitAlarmClock.gsp with incremented counter.
                 conversation.counter++
                 [counter:conversation.counter]
             }.to('hitAlarmClock')
