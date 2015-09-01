@@ -10,3 +10,4 @@ target
 unzipped
 .settings/
 *.log
+plugins
