@@ -13,7 +13,7 @@ import org.universe.research.PlanetSize
     This test should check whether a webflow command residing in same source file
     corrrectly can bind a complex object type using ValueConverters. However, there are problems with unit
     testing webflow commands. To see this behavior, run the app and go to /grailsWebflowSample/planetFlow/planet to create a Planet
-    You should see 'The planetSize.description property was null. PlanetSize was not bound using CodeValueConverter' which is present if the Command objects properties were not bound propertly.
+    You should see 'The planetSize.description property was null. PlanetSize was not bound using CodeValueConverter' which is present if the Command objects properties were not bound properly.
  */
 @TestMixin([WebFlowUnitTestMixin, DomainClassUnitTestMixin])
 class PlanetWebflowDoesNotBindCommandComplexTypeControllerTests {
